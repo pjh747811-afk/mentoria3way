@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+
+<html lang="ko" style=""><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-fixed": "#d9e2ff", "inverse-primary": "#b4c5ff", "tertiary-container": "#007b71", "on-error": "#ffffff", "on-primary-fixed-variant": "#003ea8", "primary-fixed-dim": "#b4c5ff", "primary-container": "#2563eb", "secondary": "#4f5e81", "tertiary": "#006058", "surface-variant": "#e0e3e5", "primary": "#004ac6", "on-secondary-container": "#4d5b7e", "surface-container-highest": "#e0e3e5", "error-container": "#ffdad6", "on-primary-fixed": "#00174b", "surface": "#f7f9fb", "surface-bright": "#f7f9fb", "on-surface": "#191c1e", "tertiary-fixed": "#89f5e7", "tertiary-fixed-dim": "#6bd8cb", "outline-variant": "#c3c6d7", "on-error-container": "#93000a", "secondary-container": "#c5d4fd", "on-background": "#191c1e", "surface-container-lowest": "#ffffff", "surface-container": "#eceef0", "on-tertiary": "#ffffff", "surface-container-high": "#e6e8ea", "on-secondary-fixed-variant": "#384668", "inverse-on-surface": "#eff1f3", "surface-container-low": "#f2f4f6", "on-primary": "#ffffff", "background": "#f7f9fb", "surface-dim": "#d8dadc", "secondary-fixed-dim": "#b7c6ee", "primary-fixed": "#dbe1ff", "on-primary-container": "#eeefff", "inverse-surface": "#2d3133", "error": "#ba1a1a", "on-secondary": "#ffffff", "surface-tint": "#0053db", "on-tertiary-container": "#b3fff3", "outline": "#737686", "on-surface-variant": "#434655", "on-tertiary-fixed": "#00201d", "on-secondary-fixed": "#0a1a3a", "on-tertiary-fixed-variant": "#005049" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "gutter-mobile": "1rem", "margin-mobile": "1rem", "margin": "2rem", "space-md": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "gutter": "1.5rem", "space-xl": "2rem" }, "fontFamily": { "label-lg": ["Noto Sans"], "headline-lg": ["Noto Sans"], "body-lg": ["Noto Sans"], "label-md": ["Noto Sans"], "body-md": ["Noto Sans"], "display-lg-mobile": ["Noto Sans"], "metric-stat": ["Noto Sans"], "headline-lg-mobile": ["Noto Sans"], "display-lg": ["Noto Sans"], "label-sm": ["Noto Sans"], "body-sm": ["Noto Sans"], "headline-sm": ["Noto Sans"], "headline-md": ["Noto Sans"] }, "fontSize": { "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "42px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "metric-stat": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "display-lg": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="메뉴 열기" class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary transition-colors"><span class="material-symbols-outlined text-[24px]">menu</span></button><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">멘토리아</span><span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase ml-1">Mentoria</span></div></div><div class="flex items-center gap-space-xs"><button aria-label="알림" class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors relative"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-20 bg-surface"><div class="flex flex-col w-full pb-10">
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const navLinks = document.querySelectorAll("nav a");
+      navLinks.forEach((link) => {
+        if (link.getAttribute("data-path") === "mentors") {
+          link.classList.remove("text-on-surface-variant");
+          link.classList.add("text-primary", "font-bold");
+          const icon = link.querySelector(".material-symbols-outlined");
+          if (icon) {
+            icon.setAttribute("style", "font-variation-settings: 'FILL' 1;");
+          }
+        } else {
+          link.classList.remove("text-primary", "font-bold");
+          link.classList.add("text-on-surface-variant");
+        }
+      });
+    });
+  </script>
+<!-- Sticky Search Header & Filter Bar -->
+<section class="sticky top-0 z-40 bg-surface/95 backdrop-blur-md px-gutter-mobile pt-space-sm pb-space-md shadow-sm">
+<div class="relative w-full">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</div>
+<input class="w-full h-11 pl-10 pr-10 rounded-xl bg-surface-container text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-all shadow-inner" id="mentor-search-input" placeholder="직무, 기업명, 키워드 (예: 백엔드, 사업계획서, IR피칭)" type="text"/>
+<button aria-label="검색어 지우기" class="absolute inset-y-0 right-0 pr-3 flex items-center text-outline hover:text-on-surface" id="search-clear-btn" onclick="const input = document.getElementById('mentor-search-input'); input.value=''; input.focus(); applyFilters();" type="button">
+<span class="material-symbols-outlined text-[18px]">cancel</span>
+</button>
+</div>
+<!-- Category Filter Chips (Horizontal Scrollable) -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar pt-space-sm pb-1 -mx-gutter-mobile px-gutter-mobile" id="category-chips-container">
+<button class="filter-chip active flex-shrink-0 px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-primary text-white font-semibold shadow-sm transition-all" data-category="all">
+        전체
+      </button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all" data-category="dev">
+        IT/개발
+      </button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all" data-category="pm">
+        기획/PM
+      </button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all" data-category="marketing">
+        마케팅/그로스
+      </button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all" data-category="design">
+        디자인
+      </button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all" data-category="data">
+        데이터/AI
+      </button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all" data-category="startup">
+        창업/BM
+      </button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all" data-category="ir">
+        투자/IR
+      </button>
+<button class="filter-chip flex-shrink-0 px-3.5 py-1.5 rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant hover:bg-surface-container-high transition-all" data-category="hr">
+        인사/노무
+      </button>
+</div>
+<!-- Filter Pills / Sorting Controls -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+<button class="secondary-filter flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest text-tertiary font-label-sm text-label-sm shadow-sm transition-all whitespace-nowrap border border-transparent" data-filter="instant" id="toggle-instant" onclick="toggleSecondaryFilter(this, 'instant')">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container animate-ping"></span>
+          실시간 상담 가능
+        </button>
+<button class="secondary-filter px-2.5 py-1 rounded-full bg-surface-container-lowest text-secondary font-label-sm text-label-sm shadow-sm transition-all whitespace-nowrap border border-transparent" data-filter="exp50" id="toggle-exp" onclick="toggleSecondaryFilter(this, 'exp50')">
+          멘토링 50회+
+        </button>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0 pl-2">
+<select class="bg-transparent font-label-sm text-label-sm text-on-surface-variant focus:outline-none cursor-pointer py-1" id="sort-select" onchange="sortMentorCards(this.value)">
+<option value="popular">인기순</option>
+<option value="rating">리뷰평점 높은순</option>
+<option value="reviews">멘토링 횟수순</option>
+<option value="recent">최신 등록순</option>
+</select>
+<span class="material-symbols-outlined text-[16px] text-outline">unfold_more</span>
+</div>
+</div>
+</section>
+<!-- Live Opportunity Highlight Banner (Delight Moment) -->
+<section class="px-gutter-mobile pt-space-md">
+<div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary to-primary-container p-4 text-on-primary shadow-md">
+<div class="relative z-10 flex items-center justify-between">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="px-2 py-0.5 rounded-full bg-white/20 font-label-sm text-label-sm backdrop-blur-sm text-on-primary font-bold">10월 한정 이벤트</span>
+<span class="font-label-sm text-label-sm text-primary-fixed">합격보장 멘토링 매칭</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold leading-tight">정부지원사업 &amp; 대기업 이직</span>
+<p class="font-body-sm text-body-sm text-on-primary-container opacity-90 mt-0.5">검증된 현직자 1:1 세션 최대 30% 바우처 지원</p>
+</div>
+<div class="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-[28px]" style="font-variation-settings: 'FILL' 1;">stars</span>
+</div>
+</div>
+<!-- Decorative background glow ring -->
+<div class="absolute -right-6 -bottom-6 w-32 h-32 rounded-full bg-white/10 blur-xl pointer-events-none"></div>
+</div>
+</section>
+<!-- Result Counter & Verified Notice -->
+<div class="px-gutter-mobile pt-space-md pb-space-xs flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">추천 멘토</span>
+<span class="font-label-md text-label-md text-primary font-bold" id="mentor-count-badge">6명</span>
+</div>
+<div class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-label-sm text-label-sm">전원 재직/경력 서류 100% 인증</span>
+</div>
+</div>
+<!-- Mentor Cards Feed -->
+<section class="px-gutter-mobile flex flex-col gap-space-md pt-space-xs" id="mentor-feed">
+<!-- Card 1: 김현직 멘토 -->
+<article class="mentor-card relative flex flex-col rounded-2xl bg-surface-container-lowest p-5 shadow-sm hover:shadow-md transition-all duration-300 transform" data-category="dev" data-instant="true" data-order="1" data-rating="4.9" data-sessions="142">
+<!-- Top Row: Avatar + Info + Bookmark -->
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="relative w-14 h-14 rounded-2xl overflow-hidden bg-surface-container flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Professional studio portrait of an Asian male software engineer in his early 30s wearing a modern navy crewneck sweater, friendly confident expression, softly blurred neutral studio background, crisp modern corporate minimalism lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz3BzY_xrJsY0dUu4Ut8faOhZ8RrhvD19uQOTSLvhebFud1IEbuRhQ3eT__oSpLVs2C13mi-QtafIuHXfrPoQx7G46wX8pKF9b9t9JIioyspRBr4eP51Mewu3t6DL8EEFEv35ozuDOXZB_iO6FhpHrYk_6GcoApdstaFGG9ILlp23ItDw2WISqMV5q7vnjIFJoNefhRWFwG4aEe5iaV1fHN91G5jrxa6SysZyiZ-yQVvFEDQnXAuZ_"/>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-tertiary-fixed ring-2 ring-surface-container-lowest flex items-center justify-center" title="온라인 상태"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">김현직</span>
+<span class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-[10px]">
+<span class="material-symbols-outlined text-[11px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                현직인증
+              </span>
+</div>
+<span class="font-label-md text-label-md text-secondary truncate">네카라쿠배 시니어 백엔드 리드 · 9년차</span>
+<div class="flex items-center gap-2 mt-0.5">
+<div class="flex items-center gap-0.5 text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.9</span>
+<span class="text-outline text-body-sm">(142회)</span>
+</div>
+<span class="text-outline text-label-sm">·</span>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">응답률 99%</span>
+</div>
+</div>
+</div>
+<button aria-label="관심 멘토 저장" class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-outline transition-colors hover:text-primary" onclick="const icon = this.querySelector('.material-symbols-outlined'); if(icon.style.fontVariationSettings.includes('1')){ icon.style.fontVariationSettings='\'FILL\' 0'; this.classList.remove('text-primary'); this.classList.add('text-outline'); } else { icon.style.fontVariationSettings='\'FILL\' 1'; this.classList.add('text-primary'); this.classList.remove('text-outline'); }">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+</button>
+</div>
+<!-- Introduction Quote -->
+<div class="mt-3.5 p-3 rounded-xl bg-surface-container-low">
+<p class="font-body-md text-body-md text-on-surface line-clamp-2">
+          “수천만 트래픽 장애 대응 경험을 바탕으로 합격하는 이력서와 지속 가능한 아키텍처를 함께 설계합니다.”
+        </p>
+</div>
+<!-- Skill Tags -->
+<div class="flex items-center gap-1.5 flex-wrap mt-3">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#이력서 리뷰</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#대용량 트래픽</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#아키텍처 코칭</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#모의면접</span>
+</div>
+<!-- Format & Session Highlights -->
+<div class="flex items-center justify-between mt-3.5 pt-3 border-none bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[15px]">videocam</span>
+            화상 1:1 (50분)
+          </span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-bold">
+            10.12 세션 모집중
+          </span>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">75,000원<span class="font-body-sm text-body-sm text-outline font-normal"> / 회</span></span>
+</div>
+<!-- Action Button -->
+<div class="mt-3 flex gap-2">
+<button class="flex-1 h-11 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] transition-transform" onclick="const t = document.getElementById('nav-detail-toast'); t.classList.remove('hidden'); setTimeout(()=&gt;t.classList.add('hidden'), 3500);">
+<span class="">1:1 멘토링 신청</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Card 2: 이전문 멘토 (정부지원사업 특화) -->
+<article class="mentor-card relative flex flex-col rounded-2xl bg-surface-container-lowest p-5 shadow-sm hover:shadow-md transition-all duration-300 transform" data-category="pm startup" data-instant="true" data-order="2" data-rating="5.0" data-sessions="210">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="relative w-14 h-14 rounded-2xl overflow-hidden bg-surface-container flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Editorial portrait of a distinguished Asian male startup accelerator director in his late 30s wearing a tailored charcoal blazer with an open collar shirt, warm engaging smile, sophisticated co-working conference room backdrop with soft lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkYSkvwU4B-KA18bwjKrWTV3HAB1d5r0fafGSyzoTDhaMgDm6E8dk1fHL3A9G9jtikhsaUYoiVvhvzN0dP-U9PDWWHmheqUTPEPTLIGetCj3Pay5mETVwt4lvQvOJTBHPC_a_hfxWHr3Pz75MTMDKCe-J5YtprB9wagC4g9bF8KDFzTwDoLDZGeMpY0EMDXHoGvdZsatyWRKrQZEQbglVBoYDXwUS3-ucy_iBKFEGII8QWp3rYtJI1"/>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-tertiary ring-2 ring-surface-container-lowest flex items-center justify-center" title="실시간 예약"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">이전문</span>
+<span class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-md bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-[10px] font-bold">
+<span class="material-symbols-outlined text-[11px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+                TOP 멘토
+              </span>
+</div>
+<span class="font-label-md text-label-md text-secondary truncate">전 K-Startup 심사역 · 창업기획자 12년차</span>
+<div class="flex items-center gap-2 mt-0.5">
+<div class="flex items-center gap-0.5 text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">5.0</span>
+<span class="text-outline text-body-sm">(210회)</span>
+</div>
+<span class="text-outline text-label-sm">·</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">누적 합격 43건</span>
+</div>
+</div>
+</div>
+<button aria-label="관심 멘토 저장" class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-outline transition-colors hover:text-primary" onclick="const icon = this.querySelector('.material-symbols-outlined'); if(icon.style.fontVariationSettings.includes('1')){ icon.style.fontVariationSettings='\'FILL\' 0'; this.classList.remove('text-primary'); this.classList.add('text-outline'); } else { icon.style.fontVariationSettings='\'FILL\' 1'; this.classList.add('text-primary'); this.classList.remove('text-outline'); }">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+</button>
+</div>
+<div class="mt-3.5 p-3 rounded-xl bg-surface-container-low">
+<p class="font-body-md text-body-md text-on-surface line-clamp-2">
+          “심사위원의 눈으로 예비창업패키지, 초기창업패키지 사업계획서의 결함을 1시간 내에 찾아내 드립니다.”
+        </p>
+</div>
+<div class="flex items-center gap-1.5 flex-wrap mt-3">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#정부지원사업 합격</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#사업계획서 코칭</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#IR 피칭 덱</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#BM 고도화</span>
+</div>
+<div class="flex items-center justify-between mt-3.5 pt-3">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[15px]">timer</span>
+            화상 1:1 or 서면 검토
+          </span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container text-on-tertiary-container font-label-sm text-[11px] font-bold">
+            오늘 즉시 예약 가능
+          </span>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">90,000원<span class="font-body-sm text-body-sm text-outline font-normal"> / 회</span></span>
+</div>
+<div class="mt-3 flex gap-2">
+<button class="flex-1 h-11 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] transition-transform" onclick="const t = document.getElementById('nav-detail-toast'); t.classList.remove('hidden'); setTimeout(()=&gt;t.classList.add('hidden'), 3500);">
+<span class="">즉시 상담 예약</span>
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</button>
+</div>
+</article>
+<!-- Card 3: 박마케팅 멘토 -->
+<article class="mentor-card relative flex flex-col rounded-2xl bg-surface-container-lowest p-5 shadow-sm hover:shadow-md transition-all duration-300 transform" data-category="marketing" data-instant="false" data-order="3" data-rating="4.8" data-sessions="98">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="relative w-14 h-14 rounded-2xl overflow-hidden bg-surface-container flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Professional photo of an energetic East Asian female growth marketing lead in her late 20s with stylish modern haircut, wearing casual beige linen blazer in a bright modern tech office setting with warm natural sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeICK5Pl_5F9YthLifxFS5OR0PW66KCbPDHP1uodKQ-GO4SxnIxOyRvlg-rGmarJyFRUAEKXijix_Y3vqIoufMf4t2W1dhd391Cse4IzchDbpBf8H7W703f0UbJv9Y6iwPP8GHH4TTAd1mDgJ_-usr-j_aOEpiY35z4wW66pR516Les8zOtAGYKIVsp5sLxe6m_BUmWPgOyPfPiEulpfQdZnipqj5t3xxbhCdrZuqWhcqzFsTGjB3u"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">박마케팅</span>
+<span class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-[10px]">
+<span class="material-symbols-outlined text-[11px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                현직인증
+              </span>
+</div>
+<span class="font-label-md text-label-md text-secondary truncate">토스/쿠팡 출신 그로스 마케터 · 7년차</span>
+<div class="flex items-center gap-2 mt-0.5">
+<div class="flex items-center gap-0.5 text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.8</span>
+<span class="text-outline text-body-sm">(98회)</span>
+</div>
+<span class="text-outline text-label-sm">·</span>
+<span class="font-label-sm text-label-sm text-secondary">CAC 40% 절감 노하우</span>
+</div>
+</div>
+</div>
+<button aria-label="관심 멘토 저장" class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-outline transition-colors hover:text-primary" onclick="const icon = this.querySelector('.material-symbols-outlined'); if(icon.style.fontVariationSettings.includes('1')){ icon.style.fontVariationSettings='\'FILL\' 0'; this.classList.remove('text-primary'); this.classList.add('text-outline'); } else { icon.style.fontVariationSettings='\'FILL\' 1'; this.classList.add('text-primary'); this.classList.remove('text-outline'); }">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+</button>
+</div>
+<div class="mt-3.5 p-3 rounded-xl bg-surface-container-low">
+<p class="font-body-md text-body-md text-on-surface line-clamp-2">
+          “예산이 부족한 초기 스타트업을 위한 고효율 퍼포먼스 마케팅 구조와 전환 퍼널 진단을 지원합니다.”
+        </p>
+</div>
+<div class="flex items-center gap-1.5 flex-wrap mt-3">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#퍼포먼스 마케팅</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#고객 획득(CAC)</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#GA4/앰플리튜드</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#B2B/B2C</span>
+</div>
+<div class="flex items-center justify-between mt-3.5 pt-3">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[15px]">diversity_3</span>
+            화상 1:1 / 소그룹 코칭
+          </span>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">65,000원<span class="font-body-sm text-body-sm text-outline font-normal"> / 회</span></span>
+</div>
+<div class="mt-3 flex gap-2">
+<button class="flex-1 h-11 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] transition-transform" onclick="const t = document.getElementById('nav-detail-toast'); t.classList.remove('hidden'); setTimeout(()=&gt;t.classList.add('hidden'), 3500);">
+<span class="">멘토링 신청하기</span>
+<span class="material-symbols-outlined text-[18px]">calendar_add_on</span>
+</button>
+</div>
+</article>
+<!-- Card 4: 최인공 멘토 -->
+<article class="mentor-card relative flex flex-col rounded-2xl bg-surface-container-lowest p-5 shadow-sm hover:shadow-md transition-all duration-300 transform" data-category="dev data" data-instant="false" data-order="4" data-rating="4.9" data-sessions="76">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="relative w-14 h-14 rounded-2xl overflow-hidden bg-surface-container flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Modern confident portrait of a tech startup chief technology officer in his mid 30s with slim glasses, casual black tech jacket, seated next to a sleek workstation with soft cyan monitor reflection, clean minimalist Scandinavian office aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4Q6E-jtBfa-p-iSbYsv5G6pI0wU2xIS49A2HNiEB6FO2zaFj3OIBjd4m989eo5UvpVCGgBt2ylqzbWcXIRgu32Ul7RE11y4ITeQxI-Bl3kaDxYGaq8Gij71WOQVnhbZOYDbsTWeKGuhPzoxkn2JMXm4-76GHztetfXJlPm-jWotZDt8MWczig3RWaeWOFjozdD-wsMCoWr9f2-oWU7ny-pfZYGGo1c9OHPj47gZMxLzqH0DzgwiJR"/>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">최인공</span>
+<span class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-[10px]">
+<span class="material-symbols-outlined text-[11px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                현직인증
+              </span>
+</div>
+<span class="font-label-md text-label-md text-secondary truncate">생성형 AI 스타트업 CTO · 8년차</span>
+<div class="flex items-center gap-2 mt-0.5">
+<div class="flex items-center gap-0.5 text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.9</span>
+<span class="text-outline text-body-sm">(76회)</span>
+</div>
+<span class="text-outline text-label-sm">·</span>
+<span class="font-label-sm text-label-sm text-tertiary">LLM 서비스 실무</span>
+</div>
+</div>
+</div>
+<button aria-label="관심 멘토 저장" class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-outline transition-colors hover:text-primary" onclick="const icon = this.querySelector('.material-symbols-outlined'); if(icon.style.fontVariationSettings.includes('1')){ icon.style.fontVariationSettings='\'FILL\' 0'; this.classList.remove('text-primary'); this.classList.add('text-outline'); } else { icon.style.fontVariationSettings='\'FILL\' 1'; this.classList.add('text-primary'); this.classList.remove('text-outline'); }">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+</button>
+</div>
+<div class="mt-3.5 p-3 rounded-xl bg-surface-container-low">
+<p class="font-body-md text-body-md text-on-surface line-clamp-2">
+          “아이디어 단계의 AI 프로덕트를 실제 상용 가능한 PRD 및 RAG 기반 시스템 설계로 구체화해드립니다.”
+        </p>
+</div>
+<div class="flex items-center gap-1.5 flex-wrap mt-3">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#생성형 AI 기획</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#PRD 피드백</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#LLM/RAG 파이프라인</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#기술 로드맵</span>
+</div>
+<div class="flex items-center justify-between mt-3.5 pt-3">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[15px]">videocam</span>
+            화상 1:1 (60분)
+          </span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-[11px] font-bold">
+            코드/문서 동시리뷰
+          </span>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">80,000원<span class="font-body-sm text-body-sm text-outline font-normal"> / 회</span></span>
+</div>
+<div class="mt-3 flex gap-2">
+<button class="flex-1 h-11 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] transition-transform" onclick="const t = document.getElementById('nav-detail-toast'); t.classList.remove('hidden'); setTimeout(()=&gt;t.classList.add('hidden'), 3500);">
+<span class="">멘토링 신청하기</span>
+<span class="material-symbols-outlined text-[18px]">calendar_add_on</span>
+</button>
+</div>
+</article>
+<!-- Card 5: 정디자인 멘토 -->
+<article class="mentor-card relative flex flex-col rounded-2xl bg-surface-container-lowest p-5 shadow-sm hover:shadow-md transition-all duration-300 transform" data-category="design" data-instant="true" data-order="5" data-rating="4.9" data-sessions="118">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="relative w-14 h-14 rounded-2xl overflow-hidden bg-surface-container flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Creative portrait of an Asian female senior product designer in a stylish studio workspace with ambient creative lighting, clean modern design backdrop." onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&amp;fit=crop&amp;w=256&amp;q=80';" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQqR5qgHhD-2sHkZ5Y_9a87dOpl3Gz0WvDqG8pZg1t4FqOlmB3i9fR_5PqL_w_T_U_V_X_Y_Z1234567890abcdefghijklmnopqrstuvwxyz"/>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-tertiary-fixed ring-2 ring-surface-container-lowest flex items-center justify-center" title="온라인 상태"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">정디자인</span>
+<span class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-md bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-[10px]">
+<span class="material-symbols-outlined text-[11px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+                현직인증
+              </span>
+</div>
+<span class="font-label-md text-label-md text-secondary truncate">글로벌 빅테크 시니어 프로덕트 디자이너 · 8년차</span>
+<div class="flex items-center gap-2 mt-0.5">
+<div class="flex items-center gap-0.5 text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">4.9</span>
+<span class="text-outline text-body-sm">(118회)</span>
+</div>
+<span class="text-outline text-label-sm">·</span>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">서류 통과율 85%</span>
+</div>
+</div>
+</div>
+<button aria-label="관심 멘토 저장" class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-outline transition-colors hover:text-primary" onclick="const icon = this.querySelector('.material-symbols-outlined'); if(icon.style.fontVariationSettings.includes('1')){ icon.style.fontVariationSettings='\'FILL\' 0'; this.classList.remove('text-primary'); this.classList.add('text-outline'); } else { icon.style.fontVariationSettings='\'FILL\' 1'; this.classList.add('text-primary'); this.classList.remove('text-outline'); }">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+</button>
+</div>
+<div class="mt-3.5 p-3 rounded-xl bg-surface-container-low">
+<p class="font-body-md text-body-md text-on-surface line-clamp-2">
+          “단순히 예쁜 UI를 넘어 비즈니스 임팩트와 사용자 경험(UX) 문제를 집요하게 풀어내는 포트폴리오를 완성해 드립니다.”
+        </p>
+</div>
+<div class="flex items-center gap-1.5 flex-wrap mt-3">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#UI/UX 디자인</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#포트폴리오 코칭</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#디자인 시스템</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#피그마 실무</span>
+</div>
+<div class="flex items-center justify-between mt-3.5 pt-3 border-none bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[15px]">videocam</span>
+            화상 1:1 (50분)
+          </span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-[11px] font-bold">
+            포트폴리오 정밀리뷰
+          </span>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">70,000원<span class="font-body-sm text-body-sm text-outline font-normal"> / 회</span></span>
+</div>
+<div class="mt-3 flex gap-2">
+<button class="flex-1 h-11 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] transition-transform" onclick="const t = document.getElementById('nav-detail-toast'); t.classList.remove('hidden'); setTimeout(()=&gt;t.classList.add('hidden'), 3500);">
+<span class="">1:1 멘토링 신청</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</article>
+<!-- Card 6: 강데이터 멘토 -->
+<article class="mentor-card relative flex flex-col rounded-2xl bg-surface-container-lowest p-5 shadow-sm hover:shadow-md transition-all duration-300 transform" data-category="data dev" data-instant="true" data-order="6" data-rating="5.0" data-sessions="165">
+<div class="flex items-start justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="relative w-14 h-14 rounded-2xl overflow-hidden bg-surface-container flex-shrink-0 shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Professional executive portrait of an experienced Korean male principal data scientist in modern casual attire, subtle server room or tech office background." onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&amp;fit=crop&amp;w=256&amp;q=80';" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDa7qK29vG48dYlP-3nF0O1_qRw_T_S_X_Y_Z1234567890abcdefghijklmnopqrstuvwxyz"/>
+<div class="absolute bottom-0 right-0 w-3.5 h-3.5 rounded-full bg-tertiary ring-2 ring-surface-container-lowest flex items-center justify-center" title="실시간 예약"></div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">강데이터</span>
+<span class="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-md bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-sm text-[10px] font-bold">
+<span class="material-symbols-outlined text-[11px]" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+                TOP 멘토
+              </span>
+</div>
+<span class="font-label-md text-label-md text-secondary truncate">유니콘 이커머스 수석 데이터 사이언티스트 · 10년차</span>
+<div class="flex items-center gap-2 mt-0.5">
+<div class="flex items-center gap-0.5 text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold">5.0</span>
+<span class="text-outline text-body-sm">(165회)</span>
+</div>
+<span class="text-outline text-label-sm">·</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">실무 프로젝트 40+건</span>
+</div>
+</div>
+</div>
+<button aria-label="관심 멘토 저장" class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-outline transition-colors hover:text-primary" onclick="const icon = this.querySelector('.material-symbols-outlined'); if(icon.style.fontVariationSettings.includes('1')){ icon.style.fontVariationSettings='\'FILL\' 0'; this.classList.remove('text-primary'); this.classList.add('text-outline'); } else { icon.style.fontVariationSettings='\'FILL\' 1'; this.classList.add('text-primary'); this.classList.remove('text-outline'); }">
+<span class="material-symbols-outlined text-[18px]">bookmark</span>
+</button>
+</div>
+<div class="mt-3.5 p-3 rounded-xl bg-surface-container-low">
+<p class="font-body-md text-body-md text-on-surface line-clamp-2">
+          “실제 현업 데이터 파이프라인 구축 및 머신러닝/LLM 모델 배포 경험을 토대로 실전 기술 면접과 과제 전형을 코칭합니다.”
+        </p>
+</div>
+<div class="flex items-center gap-1.5 flex-wrap mt-3">
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#데이터 사이언스</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#머신러닝/AI</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#SQL/파이썬 코딩테스트</span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">#데이터 분석 포트폴리오</span>
+</div>
+<div class="flex items-center justify-between mt-3.5 pt-3">
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary">
+<span class="material-symbols-outlined text-[15px]">code</span>
+            화상 1:1 or 코드 리뷰
+          </span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container text-on-tertiary-container font-label-sm text-[11px] font-bold">
+            내일 예약 가능
+          </span>
+</div>
+<span class="font-label-lg text-label-lg font-bold text-on-surface">85,000원<span class="font-body-sm text-body-sm text-outline font-normal"> / 회</span></span>
+</div>
+<div class="mt-3 flex gap-2">
+<button class="flex-1 h-11 rounded-xl bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] transition-transform" onclick="const t = document.getElementById('nav-detail-toast'); t.classList.remove('hidden'); setTimeout(()=&gt;t.classList.add('hidden'), 3500);">
+<span class="">즉시 상담 예약</span>
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+</button>
+</div>
+</article>
+<!-- Empty State Display -->
+<div class="hidden flex-col items-center justify-center p-8 rounded-2xl bg-surface-container-lowest text-center border border-dashed border-outline-variant my-2" id="empty-state-card">
+<div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center text-outline mb-3">
+<span class="material-symbols-outlined text-[32px]">person_search</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface mb-1">선택하신 카테고리의 멘토가 없습니다</span>
+<p class="font-body-sm text-body-sm text-secondary mb-4">다른 분야를 선택하시거나 검색어를 확인해 보세요.</p>
+<button class="px-4 py-2 rounded-xl bg-surface-container-high text-primary font-label-md text-label-md font-semibold hover:bg-surface-variant transition-colors flex items-center gap-1" onclick="resetFilters()">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+    전체 멘토 보기
+  </button>
+</div>
+</section>
+<!-- Interactive Category Micro-interactions & Chip Select Script -->
+<script>
+    let activeCategory = 'all';
+    let filterInstant = false;
+    let filterExp50 = false;
+    let searchQuery = '';
+
+    function applyFilters() {
+      const cards = document.querySelectorAll('.mentor-card');
+      const emptyState = document.getElementById('empty-state-card');
+      const countBadge = document.getElementById('mentor-count-badge');
+      const searchInput = document.getElementById('mentor-search-input');
+      if (searchInput) searchQuery = searchInput.value.trim().toLowerCase();
+
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const categories = (card.getAttribute('data-category') || '').split(' ');
+        const isInstant = card.getAttribute('data-instant') === 'true';
+        const sessions = parseInt(card.getAttribute('data-sessions') || '0', 10);
+        const cardText = card.innerText.toLowerCase();
+
+        // 1. Category check
+        const matchCategory = (activeCategory === 'all') || categories.includes(activeCategory);
+
+        // 2. Secondary filters check
+        const matchInstant = !filterInstant || isInstant;
+        const matchExp = !filterExp50 || sessions >= 50;
+
+        // 3. Search query check
+        const matchSearch = !searchQuery || cardText.includes(searchQuery);
+
+        if (matchCategory && matchInstant && matchExp && matchSearch) {
+          card.classList.remove('hidden');
+          // Smooth entry transition
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(6px) scale(0.98)';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0) scale(1)';
+          }, 20);
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Update counter
+      if (countBadge) {
+        countBadge.textContent = `${visibleCount}명`;
+      }
+
+      // Toggle empty state
+      if (emptyState) {
+        if (visibleCount === 0) {
+          emptyState.classList.remove('hidden');
+          emptyState.classList.add('flex');
+        } else {
+          emptyState.classList.add('hidden');
+          emptyState.classList.remove('flex');
+        }
+      }
+    }
+
+    function toggleSecondaryFilter(btn, type) {
+      if (type === 'instant') {
+        filterInstant = !filterInstant;
+        if (filterInstant) {
+          btn.classList.remove('bg-surface-container-lowest', 'text-tertiary');
+          btn.classList.add('bg-tertiary', 'text-on-tertiary');
+        } else {
+          btn.classList.remove('bg-tertiary', 'text-on-tertiary');
+          btn.classList.add('bg-surface-container-lowest', 'text-tertiary');
+        }
+      } else if (type === 'exp50') {
+        filterExp50 = !filterExp50;
+        if (filterExp50) {
+          btn.classList.remove('bg-surface-container-lowest', 'text-secondary');
+          btn.classList.add('bg-primary-container', 'text-on-primary-container');
+        } else {
+          btn.classList.remove('bg-primary-container', 'text-on-primary-container');
+          btn.classList.add('bg-surface-container-lowest', 'text-secondary');
+        }
+      }
+      applyFilters();
+    }
+
+    function resetFilters() {
+      const chips = document.querySelectorAll('.filter-chip');
+      chips.forEach(c => {
+        if (c.getAttribute('data-category') === 'all') {
+          c.classList.add('bg-primary', 'text-white', 'font-semibold', 'shadow-sm');
+          c.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        } else {
+          c.classList.remove('bg-primary', 'text-white', 'font-semibold', 'shadow-sm');
+          c.classList.add('bg-surface-container', 'text-on-surface-variant');
+        }
+      });
+      activeCategory = 'all';
+
+      const searchInput = document.getElementById('mentor-search-input');
+      if (searchInput) searchInput.value = '';
+
+      applyFilters();
+    }
+
+    function sortMentorCards(criteria) {
+      const feed = document.getElementById('mentor-feed');
+      const cards = Array.from(document.querySelectorAll('.mentor-card'));
+      const emptyState = document.getElementById('empty-state-card');
+
+      cards.sort((a, b) => {
+        if (criteria === 'rating') {
+          const rA = parseFloat(a.getAttribute('data-rating') || '0');
+          const rB = parseFloat(b.getAttribute('data-rating') || '0');
+          return rB - rA;
+        } else if (criteria === 'reviews') {
+          const sA = parseInt(a.getAttribute('data-sessions') || '0', 10);
+          const sB = parseInt(b.getAttribute('data-sessions') || '0', 10);
+          return sB - sA;
+        } else if (criteria === 'recent') {
+          const oA = parseInt(a.getAttribute('data-order') || '0', 10);
+          const oB = parseInt(b.getAttribute('data-order') || '0', 10);
+          return oB - oA;
+        } else {
+          // popular (default order)
+          const oA = parseInt(a.getAttribute('data-order') || '0', 10);
+          const oB = parseInt(b.getAttribute('data-order') || '0', 10);
+          return oA - oB;
+        }
+      });
+
+      cards.forEach(card => feed.insertBefore(card, emptyState));
+    }
+
+    // Initialize Chip Listeners
+    document.addEventListener('DOMContentLoaded', () => {
+      const chips = document.querySelectorAll('.filter-chip');
+      chips.forEach(chip => {
+        chip.addEventListener('click', () => {
+          chips.forEach(c => {
+            c.classList.remove('bg-primary', 'text-white', 'font-semibold', 'shadow-sm');
+            c.classList.add('bg-surface-container', 'text-on-surface-variant');
+          });
+          chip.classList.add('bg-primary', 'text-white', 'font-semibold', 'shadow-sm');
+          chip.classList.remove('bg-surface-container', 'text-on-surface-variant');
+
+          activeCategory = chip.getAttribute('data-category') || 'all';
+          applyFilters();
+        });
+      });
+
+      const searchInput = document.getElementById('mentor-search-input');
+      if (searchInput) {
+        searchInput.addEventListener('input', applyFilters);
+      }
+
+      applyFilters();
+    });
+  </script>
+<!-- Floating Match Advisory Card (Human Touch / Delight) -->
+<section class="px-gutter-mobile pt-space-lg">
+<div class="p-4 rounded-2xl bg-surface-container-low flex items-center justify-between gap-3 shadow-inner">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">psychology_alt</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface">나에게 딱 맞는 멘토를 못 찾으셨나요?</span>
+<span class="font-body-sm text-body-sm text-secondary">고민 키워드를 입력하시면 30초 내에 AI가 추천해 드려요.</span>
+</div>
+</div>
+<button class="flex-shrink-0 px-3 py-2 rounded-xl bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold hover:bg-surface-variant transition-colors" onclick="const t = document.getElementById('calendar-toast'); t.classList.remove('hidden'); setTimeout(()=&gt;t.classList.add('hidden'), 3000);">
+        AI 매칭
+      </button>
+</div>
+</section>
+</div></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-bold"><div class="flex justify-around items-center h-16 px-gutter-mobile"><a class="flex flex-col items-center justify-center w-16 h-12 gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="home" href="#"><span class="material-symbols-outlined text-[22px]">home</span><span class="font-label-sm text-label-sm">홈</span></a><a class="flex flex-col items-center justify-center w-16 h-12 gap-0.5 hover:text-on-surface transition-colors text-primary font-bold" data-path="mentors" href="#"><span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">groups</span><span class="font-label-sm text-label-sm">멘토 찾기</span></a><a class="flex flex-col items-center justify-center w-16 h-12 gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="grants" href="#"><span class="material-symbols-outlined text-[22px]">assured_workload</span><span class="font-label-sm text-label-sm">지원사업</span></a><a class="flex flex-col items-center justify-center w-16 h-12 gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="my-mentoring" href="#"><span class="material-symbols-outlined text-[22px]">calendar_month</span><span class="font-label-sm text-label-sm">멘토링 내역</span></a><a class="flex flex-col items-center justify-center w-16 h-12 gap-0.5 text-on-surface-variant hover:text-on-surface transition-colors" data-path="profile" href="#"><span class="material-symbols-outlined text-[22px]">account_circle</span><span class="font-label-sm text-label-sm">MY</span></a></div></nav>
+<div class="hidden fixed bottom-20 inset-x-4 z-50 flex items-center justify-between p-3.5 rounded-xl bg-inverse-surface text-inverse-on-surface shadow-lg transition-all animate-bounce" id="calendar-toast"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-tertiary-fixed text-[20px]">event_available</span><div class="flex flex-col"><span class="font-label-md text-label-md font-bold">캘린더 일정 및 알림 설정 완료</span><span class="font-body-sm text-[11px] opacity-90">시작 15분 전 푸시 알림과 캘린더 등록이 완료되었습니다.</span></div></div><button class="p-1 text-inverse-on-surface hover:opacity-80" onclick="document.getElementById('calendar-toast').classList.add('hidden')"><span class="material-symbols-outlined text-[18px]">close</span></button></div><div class="hidden fixed bottom-20 inset-x-4 z-50 flex items-center justify-between p-3.5 rounded-xl bg-primary text-on-primary shadow-lg transition-all animate-bounce" id="nav-detail-toast"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-on-primary text-[20px]">open_in_new</span><div class="flex flex-col"><span class="font-label-md text-label-md font-bold">멘토링 상세 페이지로 이동합니다</span><span class="font-body-sm text-[11px] opacity-90">김현직 멘토님의 세션 상세 정보 및 커리큘럼을 불러오는 중...</span></div></div><button class="p-1 text-on-primary hover:opacity-80" onclick="document.getElementById('nav-detail-toast').classList.add('hidden')"><span class="material-symbols-outlined text-[18px]">close</span></button></div>
+</body></html>

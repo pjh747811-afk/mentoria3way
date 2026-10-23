@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "secondary-fixed": "#d9e2ff", "inverse-primary": "#b4c5ff", "tertiary-container": "#007b71", "on-error": "#ffffff", "on-primary-fixed-variant": "#003ea8", "primary-fixed-dim": "#b4c5ff", "primary-container": "#2563eb", "secondary": "#4f5e81", "tertiary": "#006058", "surface-variant": "#e0e3e5", "primary": "#004ac6", "on-secondary-container": "#4d5b7e", "surface-container-highest": "#e0e3e5", "error-container": "#ffdad6", "on-primary-fixed": "#00174b", "surface": "#f7f9fb", "surface-bright": "#f7f9fb", "on-surface": "#191c1e", "tertiary-fixed": "#89f5e7", "tertiary-fixed-dim": "#6bd8cb", "outline-variant": "#c3c6d7", "on-error-container": "#93000a", "secondary-container": "#c5d4fd", "on-background": "#191c1e", "surface-container-lowest": "#ffffff", "surface-container": "#eceef0", "on-tertiary": "#ffffff", "surface-container-high": "#e6e8ea", "on-secondary-fixed-variant": "#384668", "inverse-on-surface": "#eff1f3", "surface-container-low": "#f2f4f6", "on-primary": "#ffffff", "background": "#f7f9fb", "surface-dim": "#d8dadc", "secondary-fixed-dim": "#b7c6ee", "primary-fixed": "#dbe1ff", "on-primary-container": "#eeefff", "inverse-surface": "#2d3133", "error": "#ba1a1a", "on-secondary": "#ffffff", "surface-tint": "#0053db", "on-tertiary-container": "#b3fff3", "outline": "#737686", "on-surface-variant": "#434655", "on-tertiary-fixed": "#00201d", "on-secondary-fixed": "#0a1a3a", "on-tertiary-fixed-variant": "#005049" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.5rem", "gutter-mobile": "1rem", "margin-mobile": "1rem", "margin": "2rem", "space-md": "1rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "gutter": "1.5rem", "space-xl": "2rem" }, "fontFamily": { "label-lg": ["Noto Sans"], "headline-lg": ["Noto Sans"], "body-lg": ["Noto Sans"], "label-md": ["Noto Sans"], "body-md": ["Noto Sans"], "display-lg-mobile": ["Noto Sans"], "metric-stat": ["Noto Sans"], "headline-lg-mobile": ["Noto Sans"], "display-lg": ["Noto Sans"], "label-sm": ["Noto Sans"], "body-sm": ["Noto Sans"], "headline-sm": ["Noto Sans"], "headline-md": ["Noto Sans"] }, "fontSize": { "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg": ["32px", { "lineHeight": "42px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "26px", "letterSpacing": "-0.005em", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "400" }], "display-lg-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "metric-stat": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "display-lg": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0em", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-14 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-xs min-w-0 flex-1"><button aria-label="뒤로 가기" class="w-11 h-11 flex items-center justify-center text-on-surface hover:text-primary transition-colors -ml-2" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate pr-2">Session Detail</h1></div><div class="flex items-center gap-space-xs shrink-0"><button aria-label="북마크에 저장" class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[22px]">bookmark</span></button><button aria-label="공유하기" class="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[22px]">share</span></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-14 pb-safe bg-surface"><div class="flex flex-col w-full pb-32">
+<!-- Progress Stepper Header -->
+<div class="px-gutter-mobile pt-3 pb-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm">1</span>
+<span class="font-label-lg text-label-lg text-primary">일정 및 시간 선택</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">STEP 1/2</span>
+</div>
+<!-- Step Bar -->
+<div class="w-full bg-surface-container h-1.5 rounded-full mt-2 overflow-hidden flex">
+<div class="bg-primary h-full w-1/2 rounded-full transition-all duration-300"></div>
+<div class="bg-transparent h-full w-1/2"></div>
+</div>
+</div>
+<!-- Target Mentor Profile Card -->
+<div class="px-gutter-mobile pt-2 pb-3">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-start gap-space-md">
+<div class="relative shrink-0">
+<img class="w-14 h-14 rounded-full object-cover shadow-sm" data-alt="Professional studio headshot of Korean male senior tech lead Kim Hyeon-jik wearing minimalist dark navy crewneck sweater, friendly and approachable expression, soft studio lighting with warm neutral background, clean corporate portrait photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAszJUAsAEbW4oYq48AkV2_sSyalXS7xuQIo1RO5Lxzcl1Rv5M_JMveD2OVeKMk5_pNVK3p5vk_so7xwfKUo--XBFNTt70O7kx4QjrXiD6hMFb6QavNfobHQ_RynQ63zntRzAaDdb7wXjdIYUqJVdefmB01fqMRy4099s01GUoDfafI4qC8NUELiU8WjSjbcOAZOJk3mIKlF0qcAe7CCrJqNecKQv2aofJGUyiKcQmv4Oimdol3RzPx"/>
+<div class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-tertiary-container flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap mb-0.5">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold">김현직 멘토</span>
+<span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+              시니어 백엔드 리드
+            </span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mb-2">네카라쿠배 11년차 · 시스템 아키텍처 &amp; 커리어 로드맵</p>
+<div class="flex items-center gap-2 flex-wrap text-secondary">
+<div class="flex items-center gap-1 font-label-md text-label-md bg-surface-container-low px-2 py-1 rounded">
+<span class="material-symbols-outlined text-[15px] text-primary">videocam</span>
+<span>1:1 화상 (50분)</span>
+</div>
+<div class="flex items-center gap-1 font-label-md text-label-md bg-surface-container-low px-2 py-1 rounded">
+<span class="material-symbols-outlined text-[15px] text-tertiary">card_membership</span>
+<span class="font-bold text-on-surface">75,000원</span>
+<span class="text-tertiary font-medium text-[11px]">(바우처 가능)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Calendar Scheduling Card -->
+<div class="px-gutter-mobile py-2">
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-sm">
+<!-- Calendar Controls -->
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold" id="cal-month-title">2024년 10월</span>
+<button class="bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm px-2.5 py-1 rounded-full transition-colors active:scale-95" id="btn-jump-today">
+            오늘
+          </button>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="이전 달" class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-90 transition-all" id="btn-prev-month">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button aria-label="다음 달" class="w-8 h-8 rounded-full bg-surface-container-low flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-90 transition-all" id="btn-next-month">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Days of Week Header -->
+<div class="grid grid-cols-7 text-center font-label-md text-label-md py-2 mb-1">
+<span class="text-error font-medium">일</span>
+<span class="text-on-surface-variant font-medium">월</span>
+<span class="text-on-surface-variant font-medium">화</span>
+<span class="text-on-surface-variant font-medium">수</span>
+<span class="text-on-surface-variant font-medium">목</span>
+<span class="text-on-surface-variant font-medium">금</span>
+<span class="text-primary font-medium">토</span>
+</div>
+<!-- Date Matrix (October 2024 starts on Tue Oct 1) -->
+<div class="grid grid-cols-7 gap-y-1.5 text-center font-body-md text-body-md" id="calendar-grid">
+<!-- Sun, Mon empty placeholders for Oct 1 start (Tue) -->
+<div class="h-10 flex items-center justify-center text-outline-variant opacity-30 font-label-md">29</div>
+<div class="h-10 flex items-center justify-center text-outline-variant opacity-30 font-label-md">30</div>
+<!-- Oct 1 - Oct 13: Past Dates (Disabled) -->
+<button class="h-10 w-full flex flex-col items-center justify-center rounded-lg text-outline-variant opacity-40 cursor-not-allowed" disabled="">
+<span class="font-medium text-sm">1</span>
+</button>
+<button class="h-10 w-full flex flex-col items-center justify-center rounded-lg text-outline-variant opacity-40 cursor-not-allowed" disabled="">
+<span class="font-medium text-sm">2</span>
+</button>
+<button class="h-10 w-full flex flex-col items-center justify-center rounded-lg text-error/30 cursor-not-allowed" disabled="">
+<span class="font-medium text-sm">3</span>
+</button>
+<button class="h-10 w-full flex flex-col items-center justify-center rounded-lg text-outline-variant opacity-40 cursor-not-allowed" disabled="">
+<span class="font-medium text-sm">4</span>
+</button>
+<button class="h-10 w-full flex flex-col items-center justify-center rounded-lg text-primary/30 cursor-not-allowed" disabled="">
+<span class="font-medium text-sm">5</span>
+</button>
+<button class="h-10 w-full flex flex-col items-center justify-center rounded-lg text-error/30 cursor-not-allowed" disabled="">
+<span class="font-medium text-sm">6</span>
+</button>
+<button class="h-10 w-full flex flex-col items-center justify-center rounded-lg text-outline-variant opacity-40 cursor-not-allowed" disabled="">
+<span class="font-medium text-sm">7</span>
+</button>
+<button class="h-10 w-full flex flex-col items-center justify-center rounded-lg text-outline-variant opacity-40 cursor-not-allowed" disabled="">
+<span class="font-medium text-sm">8</span>
+</button>
+<button class="h-10 w-full flex flex-col items-center justify-center rounded-lg text-error/30 cursor-not-allowed" disabled="">
+<span class="font-medium text-sm">9</span>
+</button>
+<button class="h-10 w-full flex flex-col items-center justify-center rounded-lg text-outline-variant opacity-40 cursor-not-allowed" disabled="">
+<span class="font-medium text-sm">10</span>
+</button>
+<button class="h-10 w-full flex flex-col items-center justify-center rounded-lg text-outline-variant opacity-40 cursor-not-allowed" disabled="">
+<span class="font-medium text-sm">11</span>
+</button>
+<button class="h-10 w-full flex flex-col items-center justify-center rounded-lg text-primary/30 cursor-not-allowed" disabled="">
+<span class="font-medium text-sm">12</span>
+</button>
+<button class="h-10 w-full flex flex-col items-center justify-center rounded-lg text-error/30 cursor-not-allowed" disabled="">
+<span class="font-medium text-sm">13</span>
+</button>
+<button class="h-10 w-full flex flex-col items-center justify-center rounded-lg text-outline-variant opacity-40 cursor-not-allowed" disabled="">
+<span class="font-medium text-sm">14</span>
+</button>
+<!-- Oct 15 (Fully booked) -->
+<button class="cal-day h-10 w-full flex flex-col items-center justify-center rounded-lg relative text-on-surface-variant hover:bg-surface-container active:scale-95 transition-all" data-available="false" data-date="10월 15일 (화)">
+<span class="font-medium text-sm">15</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant mt-0.5"></span>
+</button>
+<!-- Oct 16 (Available) -->
+<button class="cal-day h-10 w-full flex flex-col items-center justify-center rounded-lg relative text-on-surface hover:bg-surface-container active:scale-95 transition-all" data-available="true" data-date="10월 16일 (수)">
+<span class="font-medium text-sm">16</span>
+<span class="w-1 h-1 rounded-full bg-tertiary mt-0.5"></span>
+</button>
+<!-- Oct 17 (Currently Selected Default) -->
+<button class="cal-day h-10 w-full flex flex-col items-center justify-center rounded-lg relative bg-primary text-on-primary font-bold shadow-md active:scale-95 transition-all" data-available="true" data-date="10월 17일 (목)" id="day-17">
+<span class="font-bold text-sm">17</span>
+<span class="w-1 h-1 rounded-full bg-on-primary mt-0.5"></span>
+</button>
+<!-- Oct 18 (Available) -->
+<button class="cal-day h-10 w-full flex flex-col items-center justify-center rounded-lg relative text-on-surface hover:bg-surface-container active:scale-95 transition-all" data-available="true" data-date="10월 18일 (금)">
+<span class="font-medium text-sm">18</span>
+<span class="w-1 h-1 rounded-full bg-tertiary mt-0.5"></span>
+</button>
+<!-- Oct 19 (Saturday, Available) -->
+<button class="cal-day h-10 w-full flex flex-col items-center justify-center rounded-lg relative text-primary hover:bg-surface-container active:scale-95 transition-all" data-available="true" data-date="10월 19일 (토)">
+<span class="font-bold text-sm">19</span>
+<span class="w-1 h-1 rounded-full bg-tertiary mt-0.5"></span>
+</button>
+<!-- Oct 20 (Sunday) -->
+<button class="cal-day h-10 w-full flex flex-col items-center justify-center rounded-lg relative text-error hover:bg-surface-container active:scale-95 transition-all" data-available="false" data-date="10월 20일 (일)">
+<span class="font-medium text-sm">20</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant mt-0.5"></span>
+</button>
+<!-- Oct 21 - 31 -->
+<button class="cal-day h-10 w-full flex flex-col items-center justify-center rounded-lg relative text-on-surface hover:bg-surface-container active:scale-95 transition-all" data-available="true" data-date="10월 21일 (월)">
+<span class="font-medium text-sm">21</span>
+<span class="w-1 h-1 rounded-full bg-tertiary mt-0.5"></span>
+</button>
+<button class="cal-day h-10 w-full flex flex-col items-center justify-center rounded-lg relative text-on-surface hover:bg-surface-container active:scale-95 transition-all" data-available="true" data-date="10월 22일 (화)">
+<span class="font-medium text-sm">22</span>
+<span class="w-1 h-1 rounded-full bg-tertiary mt-0.5"></span>
+</button>
+<button class="cal-day h-10 w-full flex flex-col items-center justify-center rounded-lg relative text-on-surface hover:bg-surface-container active:scale-95 transition-all" data-available="false" data-date="10월 23일 (수)">
+<span class="font-medium text-sm">23</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant mt-0.5"></span>
+</button>
+<button class="cal-day h-10 w-full flex flex-col items-center justify-center rounded-lg relative text-on-surface hover:bg-surface-container active:scale-95 transition-all" data-available="true" data-date="10월 24일 (목)">
+<span class="font-medium text-sm">24</span>
+<span class="w-1 h-1 rounded-full bg-tertiary mt-0.5"></span>
+</button>
+<button class="cal-day h-10 w-full flex flex-col items-center justify-center rounded-lg relative text-on-surface hover:bg-surface-container active:scale-95 transition-all" data-available="true" data-date="10월 25일 (금)">
+<span class="font-medium text-sm">25</span>
+<span class="w-1 h-1 rounded-full bg-tertiary mt-0.5"></span>
+</button>
+<button class="cal-day h-10 w-full flex flex-col items-center justify-center rounded-lg relative text-primary hover:bg-surface-container active:scale-95 transition-all" data-available="true" data-date="10월 26일 (토)">
+<span class="font-bold text-sm">26</span>
+<span class="w-1 h-1 rounded-full bg-tertiary mt-0.5"></span>
+</button>
+<button class="cal-day h-10 w-full flex flex-col items-center justify-center rounded-lg relative text-error hover:bg-surface-container active:scale-95 transition-all" data-available="false" data-date="10월 27일 (일)">
+<span class="font-medium text-sm">27</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant mt-0.5"></span>
+</button>
+<button class="cal-day h-10 w-full flex flex-col items-center justify-center rounded-lg relative text-on-surface hover:bg-surface-container active:scale-95 transition-all" data-available="true" data-date="10월 28일 (월)">
+<span class="font-medium text-sm">28</span>
+<span class="w-1 h-1 rounded-full bg-tertiary mt-0.5"></span>
+</button>
+<button class="cal-day h-10 w-full flex flex-col items-center justify-center rounded-lg relative text-on-surface hover:bg-surface-container active:scale-95 transition-all" data-available="true" data-date="10월 29일 (화)">
+<span class="font-medium text-sm">29</span>
+<span class="w-1 h-1 rounded-full bg-tertiary mt-0.5"></span>
+</button>
+<button class="cal-day h-10 w-full flex flex-col items-center justify-center rounded-lg relative text-on-surface hover:bg-surface-container active:scale-95 transition-all" data-available="true" data-date="10월 30일 (수)">
+<span class="font-medium text-sm">30</span>
+<span class="w-1 h-1 rounded-full bg-tertiary mt-0.5"></span>
+</button>
+<button class="cal-day h-10 w-full flex flex-col items-center justify-center rounded-lg relative text-on-surface hover:bg-surface-container active:scale-95 transition-all" data-available="true" data-date="10월 31일 (목)">
+<span class="font-medium text-sm">31</span>
+<span class="w-1 h-1 rounded-full bg-tertiary mt-0.5"></span>
+</button>
+</div>
+<!-- Calendar Legend -->
+<div class="flex items-center justify-center gap-4 pt-4 mt-2 border-t border-transparent text-center">
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span>예약 가능</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span>선택됨</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-outline-variant"></span>
+<span>마감됨</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Time Slot Selection Section -->
+<div class="px-gutter-mobile py-2">
+<div class="flex items-center justify-between mb-2.5">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[20px] text-primary">schedule</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold" id="time-slot-heading">10월 17일 (목) 예약 가능 시간</h2>
+</div>
+<span class="font-label-sm text-label-sm bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-semibold" id="slot-count-badge">4개 슬롯</span>
+</div>
+<!-- Time Slot List / Cards -->
+<div class="flex flex-col gap-2" id="time-slots-container">
+<!-- Slot 1: Disabled / Booked -->
+<button class="w-full bg-surface-container-low opacity-60 p-3.5 rounded-xl flex items-center justify-between cursor-not-allowed text-left" disabled="">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-[18px]">lock_clock</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface-variant line-through">오전 10:00 ~ 10:50</div>
+<div class="font-body-sm text-body-sm text-outline">사전 예약 마감</div>
+</div>
+</div>
+<span class="bg-surface-container-high text-outline px-2 py-1 rounded font-label-sm text-label-sm">마감</span>
+</button>
+<!-- Slot 2: Available -->
+<button class="time-slot-btn w-full bg-surface-container-lowest hover:bg-surface-container-low p-3.5 rounded-xl flex items-center justify-between text-left transition-all active:scale-[0.99] shadow-sm" data-short-time="오후 2:00" data-time="오후 02:00 ~ 02:50">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary slot-icon-box">
+<span class="material-symbols-outlined text-[18px]">wb_sunny</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface font-semibold slot-title">오후 02:00 ~ 02:50</div>
+<div class="font-body-sm text-body-sm text-tertiary">즉시 예약 가능</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="slot-badge bg-tertiary/10 text-tertiary px-2.5 py-1 rounded-full font-label-sm text-label-sm font-semibold">선택 가능</span>
+<span class="material-symbols-outlined text-[20px] text-outline-variant slot-check">radio_button_unchecked</span>
+</div>
+</button>
+<!-- Slot 3: Selected by Default -->
+<button class="time-slot-btn w-full bg-primary-fixed/25 p-3.5 rounded-xl flex items-center justify-between text-left transition-all active:scale-[0.99] shadow-sm slot-active" data-short-time="오후 7:00" data-time="오후 07:00 ~ 07:50">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary text-on-primary flex items-center justify-center slot-icon-box shadow-sm">
+<span class="material-symbols-outlined text-[18px]">bedtime</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg text-primary font-bold slot-title">오후 07:00 ~ 07:50</div>
+<div class="font-body-sm text-body-sm text-primary/80">퇴근 후 추천 시간대 🔥</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="slot-badge bg-primary text-on-primary px-2.5 py-1 rounded-full font-label-sm text-label-sm font-bold shadow-sm">선택됨</span>
+<span class="material-symbols-outlined text-[22px] text-primary slot-check" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</button>
+<!-- Slot 4: Available with Badge -->
+<button class="time-slot-btn w-full bg-surface-container-lowest hover:bg-surface-container-low p-3.5 rounded-xl flex items-center justify-between text-left transition-all active:scale-[0.99] shadow-sm" data-short-time="오후 8:30" data-time="오후 08:30 ~ 09:20">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary slot-icon-box">
+<span class="material-symbols-outlined text-[18px]">nightlight</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface font-semibold slot-title">오후 08:30 ~ 09:20</div>
+<div class="font-body-sm text-body-sm text-tertiary">인기 급상승 시간</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="slot-badge bg-secondary-container text-on-secondary-container px-2.5 py-1 rounded-full font-label-sm text-label-sm font-semibold">잔여 1석</span>
+<span class="material-symbols-outlined text-[20px] text-outline-variant slot-check">radio_button_unchecked</span>
+</div>
+</button>
+<!-- Slot 5: Available -->
+<button class="time-slot-btn w-full bg-surface-container-lowest hover:bg-surface-container-low p-3.5 rounded-xl flex items-center justify-between text-left transition-all active:scale-[0.99] shadow-sm" data-short-time="오후 10:00" data-time="오후 10:00 ~ 10:50">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary slot-icon-box">
+<span class="material-symbols-outlined text-[18px]">dark_mode</span>
+</div>
+<div>
+<div class="font-label-lg text-label-lg text-on-surface font-semibold slot-title">오후 10:00 ~ 10:50</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">심야 딥다이브 멘토링</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<span class="slot-badge bg-tertiary/10 text-tertiary px-2.5 py-1 rounded-full font-label-sm text-label-sm font-semibold">선택 가능</span>
+<span class="material-symbols-outlined text-[20px] text-outline-variant slot-check">radio_button_unchecked</span>
+</div>
+</button>
+</div>
+</div>
+<!-- Mentoring Checklist & Policy Info Card -->
+<div class="px-gutter-mobile py-2.5">
+<div class="bg-surface-container-low p-4 rounded-xl">
+<div class="flex items-center gap-2 text-on-surface font-bold mb-2.5">
+<span class="material-symbols-outlined text-[20px] text-primary" style="font-variation-settings: 'FILL' 1;">info</span>
+<span class="font-headline-sm text-headline-sm">예약 전 확인해 주세요</span>
+</div>
+<ul class="space-y-2 text-on-surface-variant font-body-sm text-body-sm">
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary mt-0.5 shrink-0">task_alt</span>
+<span>세션 확정 후 <strong>사전 질문지 및 이력서/포트폴리오 링크</strong>를 등록하여 맞춤형 멘토링을 준비할 수 있습니다.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary mt-0.5 shrink-0">history</span>
+<span>멘토링 시작 <strong>24시간 전까지 100% 무료 취소</strong> 및 유연한 일정 변경이 지원됩니다.</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[16px] text-tertiary mt-0.5 shrink-0">mark_chat_read</span>
+<span>예약 완료 즉시 <strong>구글 밋(Google Meet) 접속 링크 및 캘린더 초대장</strong>이 카카오 알림톡으로 발송됩니다.</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Toast Element (Interactive Feedback) -->
+<div class="fixed top-16 inset-x-4 z-50 transform -translate-y-24 opacity-0 transition-all duration-300 pointer-events-none" id="booking-toast">
+<div class="bg-inverse-surface text-inverse-on-surface p-3.5 rounded-xl shadow-xl flex items-center gap-3">
+<span class="material-symbols-outlined text-[22px] text-tertiary-fixed shrink-0" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div class="min-w-0 flex-1">
+<div class="font-label-lg text-label-lg font-bold" id="toast-title">일정 확정 완료</div>
+<div class="font-body-sm text-body-sm text-inverse-on-surface/90 truncate" id="toast-desc">사전 질문지 작성 화면으로 이동합니다.</div>
+</div>
+</div>
+</div>
+<!-- Bottom Fixed Action Floating Bar -->
+<div class="fixed bottom-0 inset-x-0 z-40 bg-surface-container-lowest/95 backdrop-blur-md pb-safe shadow-[0_-4px_16px_rgba(0,0,0,0.06)]">
+<div class="px-gutter-mobile pt-3 pb-3">
+<!-- Selected Summary Ribbon -->
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-[16px] text-primary">event_available</span>
+<span class="font-label-md text-label-md text-on-surface truncate">
+            선택 일정: <strong class="text-primary font-bold" id="bottom-selected-date">10.17(목) 오후 7:00</strong> (50분)
+          </span>
+</div>
+<div class="shrink-0 text-right">
+<span class="font-label-sm text-label-sm bg-tertiary/10 text-tertiary px-2 py-0.5 rounded-full font-bold">국비·바우처 지원</span>
+</div>
+</div>
+<!-- Action Row: Price & CTA Button -->
+<div class="flex items-center gap-3">
+<div class="flex flex-col">
+<div class="flex items-baseline gap-1">
+<span class="font-metric-stat text-metric-stat text-on-surface font-extrabold leading-none">75,000</span>
+<span class="font-label-md text-label-md text-on-surface-variant">원</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-medium">바우처 적용 시 실결제 0원</span>
+</div>
+<button class="flex-1 bg-primary hover:bg-on-primary-fixed-variant text-on-primary font-label-lg text-label-lg font-semibold py-3.5 px-4 rounded-xl flex items-center justify-center gap-1.5 shadow-md active:scale-[0.98] transition-all" id="btn-submit-booking">
+<span>다음 단계로 (신청서 작성)</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function () {
+    let selectedDateStr = "10월 17일 (목)";
+    let selectedShortDate = "10.17(목)";
+    let selectedTimeStr = "오후 07:00 ~ 07:50";
+    let selectedShortTime = "오후 7:00";
+
+    const dateButtons = document.querySelectorAll(".cal-day");
+    const timeButtons = document.querySelectorAll(".time-slot-btn");
+    const headingEl = document.getElementById("time-slot-heading");
+    const bottomDateEl = document.getElementById("bottom-selected-date");
+    const submitBtn = document.getElementById("btn-submit-booking");
+    const toast = document.getElementById("booking-toast");
+    const toastTitle = document.getElementById("toast-title");
+    const toastDesc = document.getElementById("toast-desc");
+    const btnToday = document.getElementById("btn-jump-today");
+    const slotCountBadge = document.getElementById("slot-count-badge");
+
+    function updateBottomSummary() {
+      if (bottomDateEl) {
+        bottomDateEl.textContent = `${selectedShortDate} ${selectedShortTime}`;
+      }
+    }
+
+    // Date Click Event Handling
+    dateButtons.forEach(btn => {
+      btn.addEventListener("click", function () {
+        const isAvailable = this.getAttribute("data-available") === "true";
+        const dateVal = this.getAttribute("data-date");
+        if (!dateVal) return;
+
+        // Reset previous selection visuals
+        dateButtons.forEach(b => {
+          b.classList.remove("bg-primary", "text-on-primary", "font-bold", "shadow-md");
+          const dot = b.querySelector(".w-1.h-1");
+          if (dot) {
+            dot.classList.remove("bg-on-primary");
+            if (b.getAttribute("data-available") === "true") {
+              dot.classList.add("bg-tertiary");
+            } else {
+              dot.classList.add("bg-outline-variant");
+            }
+          }
+          // Restore text color based on sat/sun
+          if (b.textContent.trim() === "19" || b.textContent.trim() === "26") {
+            b.classList.add("text-primary");
+          } else if (b.textContent.trim() === "20" || b.textContent.trim() === "27") {
+            b.classList.add("text-error");
+          } else {
+            b.classList.add("text-on-surface");
+          }
+        });
+
+        // Set Active Class on Clicked
+        this.classList.remove("text-primary", "text-error", "text-on-surface");
+        this.classList.add("bg-primary", "text-on-primary", "font-bold", "shadow-md");
+        const activeDot = this.querySelector(".w-1.h-1");
+        if (activeDot) {
+          activeDot.classList.remove("bg-tertiary", "bg-outline-variant");
+          activeDot.classList.add("bg-on-primary");
+        }
+
+        selectedDateStr = dateVal;
+        const match = dateVal.match(/10월\s*(\d+)일\s*\((.)\)/);
+        if (match) {
+          selectedShortDate = `10.${match[1]}(${match[2]})`;
+        }
+
+        if (headingEl) {
+          headingEl.textContent = `${selectedDateStr} 예약 가능 시간`;
+        }
+
+        if (!isAvailable) {
+          if (slotCountBadge) {
+            slotCountBadge.textContent = "0개 슬롯";
+            slotCountBadge.className = "font-label-sm text-label-sm bg-error-container text-on-error-container px-2 py-0.5 rounded-full font-semibold";
+          }
+        } else {
+          if (slotCountBadge) {
+            slotCountBadge.textContent = "4개 슬롯";
+            slotCountBadge.className = "font-label-sm text-label-sm bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full font-semibold";
+          }
+        }
+
+        updateBottomSummary();
+      });
+    });
+
+    // Time Slot Click Event Handling
+    timeButtons.forEach(btn => {
+      btn.addEventListener("click", function () {
+        // Deselect all
+        timeButtons.forEach(b => {
+          b.classList.remove("bg-primary-fixed/25", "slot-active");
+          b.classList.add("bg-surface-container-lowest");
+          
+          const title = b.querySelector(".slot-title");
+          if (title) {
+            title.classList.remove("text-primary", "font-bold");
+            title.classList.add("text-on-surface", "font-semibold");
+          }
+          
+          const iconBox = b.querySelector(".slot-icon-box");
+          if (iconBox) {
+            iconBox.classList.remove("bg-primary", "text-on-primary", "shadow-sm");
+            iconBox.classList.add("bg-surface-container", "text-primary");
+          }
+
+          const badge = b.querySelector(".slot-badge");
+          if (badge) {
+            badge.classList.remove("bg-primary", "text-on-primary", "shadow-sm");
+            badge.classList.add("bg-tertiary/10", "text-tertiary");
+            if (badge.textContent === "선택됨") {
+              badge.textContent = "선택 가능";
+            }
+          }
+
+          const checkIcon = b.querySelector(".slot-check");
+          if (checkIcon) {
+            checkIcon.textContent = "radio_button_unchecked";
+            checkIcon.classList.remove("text-primary");
+            checkIcon.classList.add("text-outline-variant");
+            checkIcon.style.fontVariationSettings = "'FILL' 0";
+          }
+        });
+
+        // Activate Current
+        this.classList.remove("bg-surface-container-lowest");
+        this.classList.add("bg-primary-fixed/25", "slot-active");
+
+        const activeTitle = this.querySelector(".slot-title");
+        if (activeTitle) {
+          activeTitle.classList.remove("text-on-surface", "font-semibold");
+          activeTitle.classList.add("text-primary", "font-bold");
+        }
+
+        const activeIconBox = this.querySelector(".slot-icon-box");
+        if (activeIconBox) {
+          activeIconBox.classList.remove("bg-surface-container", "text-primary");
+          activeIconBox.classList.add("bg-primary", "text-on-primary", "shadow-sm");
+        }
+
+        const activeBadge = this.querySelector(".slot-badge");
+        if (activeBadge) {
+          activeBadge.classList.remove("bg-tertiary/10", "text-tertiary", "bg-secondary-container", "text-on-secondary-container");
+          activeBadge.classList.add("bg-primary", "text-on-primary", "shadow-sm");
+          activeBadge.textContent = "선택됨";
+        }
+
+        const activeCheck = this.querySelector(".slot-check");
+        if (activeCheck) {
+          activeCheck.textContent = "check_circle";
+          activeCheck.classList.remove("text-outline-variant");
+          activeCheck.classList.add("text-primary");
+          activeCheck.style.fontVariationSettings = "'FILL' 1";
+        }
+
+        selectedTimeStr = this.getAttribute("data-time") || "";
+        selectedShortTime = this.getAttribute("data-short-time") || "";
+        updateBottomSummary();
+      });
+    });
+
+    // Jump Today Button
+    if (btnToday) {
+      btnToday.addEventListener("click", () => {
+        const defaultDay = document.getElementById("day-17");
+        if (defaultDay) {
+          defaultDay.click();
+        }
+      });
+    }
+
+    // Submit Booking Action Toast
+    let toastTimeout;
+    if (submitBtn) {
+      submitBtn.addEventListener("click", () => {
+        if (!toast) return;
+        clearTimeout(toastTimeout);
+
+        if (toastTitle) toastTitle.textContent = "일정 예약 완료!";
+        if (toastDesc) toastDesc.textContent = `${selectedShortDate} ${selectedShortTime} 일정이 선택되었습니다. 사전 질문지 작성 단계로 이동합니다.`;
+
+        toast.classList.remove("-translate-y-24", "opacity-0", "pointer-events-none");
+        toast.classList.add("translate-y-0", "opacity-100");
+
+        toastTimeout = setTimeout(() => {
+          toast.classList.add("-translate-y-24", "opacity-0", "pointer-events-none");
+          toast.classList.remove("translate-y-0", "opacity-100");
+        }, 3200);
+      });
+    }
+  })();
+</script></main></body></html>
